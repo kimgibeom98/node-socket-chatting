@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>채팅</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/index.js" defer></script>
+</head>
+
+<body>
+  <div class="chat-fullbox">
+    <div class="chat-box">
+      <div id="google_translate_element" class="hd_lang"></div>
+      <div class="chat-total">
+        <div class="chat-header">
+          <div>
+            실시간 채팅 <span class="pe-count"></span>
+          </div>
+        </div>
+        <div id="main">
+          <div id="chat">
+            <!-- 채팅 메시지 영역 -->
+          </div>
+          <div class="send-message">
+            <input type="text" id="message-box" placeholder="메세지를 입력해주세요." onkeyup="enterKey()">
+            <button onclick="send()">전송</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ko',
+        includedLanguages: 'ko,zh-CN,zh-TW,ja,vi,th,tl,km,my,mn,ru,en,fr,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
